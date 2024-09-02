@@ -6,6 +6,7 @@ import googleImg from "../assets/google.png"
 import { useContext, useState } from "react";
 import { UserContext } from "../context/UserContext";
 import login from "../services/login.service";
+import google from "../services/google.service";
 
 function Login() {
   const navigate = useNavigate();
@@ -43,6 +44,11 @@ function Login() {
   function handleLogin(e) {
     e.preventDefault();
     login(formData, setLogError, navigate, setChange, change);
+  }
+
+  //Manejo de login con Google
+  function handleGoogle() {
+    google()
   }
 
   return (
@@ -87,7 +93,7 @@ function Login() {
         </form>
         <span>or</span>
         <span className="google">
-          <button>Continue with Google <img src={googleImg} alt="google" /></button>
+          <button onClick={handleGoogle}>Continue with Google <img src={googleImg} alt="google" /></button>
         </span>
         <Link to="/recover">Have you lost your password? click here</Link>
       </aside>

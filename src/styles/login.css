@@ -76,6 +76,10 @@
     border-radius: 0 10px 10px 0;
 }
 
+.password img{
+    width: 50%;
+}
+
 .password button:hover {
     box-shadow: none;
 }
