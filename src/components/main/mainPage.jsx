@@ -3,6 +3,7 @@ import Login from "../../pages/login";
 import Register from "../../pages/register";
 import Verify from "../../pages/verify";
 import Home from "../../pages/home";
+import BookPage from "../../pages/bookPage";
 
 function Main() {
   return (
@@ -11,6 +12,7 @@ function Main() {
       <Route path="/login" Component={Login} />
       <Route path="/register" Component={Register}/>
       <Route path="/verify/:email/:verifyCode" Component={Verify}/>
+      <Route path="/book/:title" Component={BookPage}/>
     </Routes>
   );
 }
