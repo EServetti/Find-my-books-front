@@ -1,0 +1,103 @@
+.main-home {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  background-color: #242424;
+}
+
+.description-section {
+  width: 60%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.description-input {
+  min-height: 200px;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #242424;
+  border: 1px solid white;
+  border-bottom: none;
+  box-shadow: inset -5px 0 5px -5px white, inset 5px 0 5px -5px white,
+    inset 0 5px 5px -5px white;
+  outline: none;
+  resize: none;
+}
+
+.description-input::placeholder {
+  color: #d3d3d3;
+  opacity: 1;
+  text-align: center;
+}
+
+.look-button {
+  width: 100%;
+  padding: 5px 20px;
+  margin-top: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid white;
+  background-color: #242424;
+  color: white;
+}
+
+.look-button:hover {
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.home-error {
+  color: red;
+}
+
+.books-section {
+  width: 80%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.books-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin: 10px 30px;
+}
+
+.book {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 0 10px 5px black;
+}
+
+.book img {
+    max-width: 70%;
+}
+
+.book button {
+    margin-top: auto;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: #242424;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.book button:hover {
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
