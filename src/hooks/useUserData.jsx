@@ -13,7 +13,9 @@ function useUserData() {
           const response = res.data
           if (response.statusCode === 200) {            
             setUser(response.message)
-          } 
+          } else {
+            setUser(null)
+          }
         });
     }
     fetchUserData();

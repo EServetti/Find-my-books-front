@@ -96,6 +96,7 @@ function Login() {
           <button onClick={handleGoogle}>Continue with Google <img src={googleImg} alt="google" /></button>
         </span>
         <Link to="/recover">Have you lost your password? click here</Link>
+        <Link to="/register">You don't have an account yet? register</Link>
       </aside>
     </div>
   );
