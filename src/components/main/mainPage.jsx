@@ -12,7 +12,7 @@ function Main() {
       <Route path="/login" Component={Login} />
       <Route path="/register" Component={Register}/>
       <Route path="/verify/:email/:verifyCode" Component={Verify}/>
-      <Route path="/book/:title" Component={BookPage}/>
+      <Route path="/book/:isbn" Component={BookPage}/>
     </Routes>
   );
 }

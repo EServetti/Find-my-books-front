@@ -2,7 +2,7 @@ import axios from "axios";
 import { path } from "../path";
 import { useEffect, useState } from "react";
 
-function useBook(title) {
+function useBook(isbn) {
     const [loading, setLoading] = useState(true)
     const [book, setBook] = useState(null)
     const [error, setError] = useState(null)
@@ -10,11 +10,13 @@ function useBook(title) {
   useEffect(() => {
     async function fetchBook() {
       axios
-        .post(`${path}/api/books/${title}`, {}, {withCredentials: true})
+        .post(`${path}/api/books/${isbn}`, {
+
+        }, {withCredentials: true})
         .then((res) => {
           const response = res.data
-          if (response.statusCode === 200) {            
-            setBook(response.message)
+          if (response.statusCode === 200) { 
+            setBook(response.message)            
             setLoading(false)
           } else {
             setError(response.message)
@@ -22,7 +24,7 @@ function useBook(title) {
         });
     }
     fetchBook();
-  }, [title]);
+  }, [isbn]);
 
   return {book, loading, error}
 }

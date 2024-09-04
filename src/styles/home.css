@@ -26,9 +26,9 @@
   color: white;
   background-color: #242424;
   border: 1px solid white;
-  border-bottom: none;
-  box-shadow: inset -5px 0 5px -5px white, inset 5px 0 5px -5px white,
-    inset 0 5px 5px -5px white;
+  border-radius: 15px;
+  box-shadow: inset 5px 5px 5px -5px white, inset -5px 5px 5px -5px white,
+    inset 5px -5px 5px -5px white, inset -5px -5px 5px -5px white;
   outline: none;
   resize: none;
 }
@@ -74,31 +74,35 @@
 }
 
 .book {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    border: 2px solid white;
-    border-radius: 10px;
-    padding: 5px;
-    box-shadow: 0 0 10px 5px black;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0 0 10px 5px black;
 }
 
 .book img {
-    max-width: 70%;
+  max-width: 70%;
 }
 
 .book-button {
-    margin-top: auto;
-    border: 2px solid white;
-    border-radius: 5px;
-    background-color: #242424;
-    color: white;
-    padding: 5px;
-    cursor: pointer;
+  margin-top: auto;
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: #242424;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .book-button:hover {
-    text-decoration: none;
+  text-decoration: none;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.isbn {
+  display: none;
 }

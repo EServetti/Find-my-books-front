@@ -47,6 +47,7 @@ function Home() {
                 publishedDate={book.publishedDate}
                 publisher={book.publisher}
                 coverImage={book.coverImage}
+                isbn={book.isbn}
               />
             ))}
           </div>

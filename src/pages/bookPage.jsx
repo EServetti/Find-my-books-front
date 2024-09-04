@@ -1,22 +1,38 @@
 import { useParams } from "react-router-dom";
 import "../styles/book.css";
 import useBook from "../hooks/useBook";
+import defaultBookCover from "../assets/book.png";
+import { useContext, useState } from "react";
+import { UserContext } from "../context/UserContext";
+import addToList from "../services/addToList";
 
 function BookPage() {
-  const { title } = useParams();
-  const { book, loading, error } = useBook(title);
+  const { isbn } = useParams();
+  const { book, loading, error } = useBook(isbn);
+  const { user } = useContext(UserContext);
+  const bookCover = loading
+    ? null
+    : book.coverImage !== "No image available"
+    ? book.coverImage
+    : defaultBookCover;
 
+  //Manejo de agregacion a lista
+  const [addError, setAddError] = useState(null);
+  function handleClick() {
+    addToList(isbn, setAddError, user);
+  }
   return (
     <div className="main-book">
-      {error && <h3>{error}</h3>}
-      {loading ? (
+      {error ? (
+        <h3>{error}</h3>
+      ) : loading && !error ? (
         <h3>Loading...</h3>
       ) : (
         <div className="book-content">
           {book && (
             <>
               <section className="book-cover">
-                <img src={book.coverImage} alt={book.title} />
+                <img src={bookCover} alt={book.title} />
               </section>
               <section className="book-info">
                 <h1>{book.title}</h1>
@@ -28,7 +44,10 @@ function BookPage() {
                   <strong>Published Date:</strong> {book.publishedDate}
                 </p>
                 <p>{book.description}</p>
-                <button>Add to my list</button>
+                <span className="add-button-span">
+                  <button onClick={handleClick}>Add to my list</button>
+                  {!addError ? <></> : <p>{addError}</p>}
+                </span>
               </section>
             </>
           )}
