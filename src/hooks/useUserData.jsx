@@ -12,8 +12,6 @@ function useUserData() {
         .then((res) => {
           const response = res.data
           if (response.statusCode === 200) {    
-            console.log(response.message);
-                    
             setUser(response.message)
           } else {
             setUser(null)

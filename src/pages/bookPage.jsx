@@ -23,6 +23,8 @@ function BookPage() {
   }
   return (
     <div className="main-book">
+      <aside className="book-aside">
+      </aside>
       {error ? (
         <h3>{error}</h3>
       ) : loading && !error ? (
