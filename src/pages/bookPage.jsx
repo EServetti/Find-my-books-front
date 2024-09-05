@@ -19,7 +19,7 @@ function BookPage() {
   //Manejo de agregacion a lista
   const [addError, setAddError] = useState(null);
   function handleClick() {
-    addToList(isbn, setAddError, user);
+    addToList(book, setAddError, user);
   }
   return (
     <div className="main-book">
