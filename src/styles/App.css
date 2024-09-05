@@ -10,15 +10,16 @@ nav {
   min-height: 15vh;
   width: 100%;
   font-size: 1.5rem;
-  border-bottom: 2px solid white;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 15px;
+  background-color: #fafafa;
+  color: black;
 }
 
 a {
-  color: white;
+  color: black;
   text-decoration: none;
   padding: 0 10px;
 }
@@ -27,10 +28,16 @@ a:hover {
   text-decoration: underline;
 }
 
+
 .navBar-title {
   padding: 15px;
   border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  background-color: #242424;
   margin: 10px;
+  box-shadow: 0px 0px 10px 0px black;
+  margin-right: auto;
 }
 
 .user-data{
@@ -42,11 +49,11 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
   margin-right: 5%;
-  background-color: white;
+  background-color: #fafafa;
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: 0px 0px 10px 0px black;
 }
 
 .user-data img {
@@ -70,6 +77,7 @@ a:hover {
 .dropdown-menu li {
   padding: 10px 20px;
   cursor: pointer;
+  color: white;
 }
 
 .dropdown-menu li:hover {

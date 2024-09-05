@@ -9,7 +9,7 @@ import addToList from "../services/addToList";
 function BookPage() {
   const { isbn } = useParams();
   const { book, loading, error } = useBook(isbn);
-  const { user } = useContext(UserContext);
+  const { user, change, setChange } = useContext(UserContext);
   const bookCover = loading
     ? null
     : book.coverImage !== "No image available"
@@ -19,7 +19,7 @@ function BookPage() {
   //Manejo de agregacion a lista
   const [addError, setAddError] = useState(null);
   function handleClick() {
-    addToList(book, setAddError, user);
+    addToList(book, setAddError, user, setChange, change);
   }
   return (
     <div className="main-book">

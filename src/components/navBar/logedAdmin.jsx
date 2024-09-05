@@ -21,7 +21,7 @@ function LogedAdmin() {
     <nav>
       <span className="navBar-title">Find your books</span>
       <Link to="/">Home</Link>
-      <Link to="/list">My books</Link>
+      <Link to="/list">To read</Link>
       <span onClick={handleUserData} className="user-data">
         <img src={user.photo} alt="user" />
         {isOpen && (

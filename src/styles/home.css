@@ -1,11 +1,25 @@
 .main-home {
-  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #fafafa;
+}
+
+.main-description {
+  min-height: 100vh;
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   background-color: #242424;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-radius: 15px 0 0 0;
+  padding-top: 5%;
+  box-shadow: 0px 0px 10px 0px black;
 }
 
 .description-section {
@@ -106,3 +120,41 @@
 .isbn {
   display: none;
 }
+
+.home-aside {
+  box-sizing: border-box;
+  min-height: 100vh;
+  width: 16%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #fafafa;
+  color: black;
+}
+
+.web-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+}
+
+.home-aside a {
+  font-size: 1.5rem;
+}
+
+.loged-web-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  list-style-type: none;
+  font-size: 1.2rem;
+}
+

@@ -2,7 +2,7 @@ import axios from "axios";
 import { path } from "../path";
 import Swal from "sweetalert2";
 
-async function addToList(book, setError, user) {
+async function addToList(book, setError, user, setChange, change) {
   if (!user) {
     setError("You must login first!");
   } else {
@@ -36,6 +36,7 @@ async function addToList(book, setError, user) {
             },
             confirmButtonText: "",
           });
+          setChange(!change)
         } else {
             setError(response.message)
         }
