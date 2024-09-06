@@ -13,11 +13,49 @@
   width: 16%;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   padding: 10px;
   background-color: #fafafa;
   color: black;
+}
+
+.book-aside h2 {
+  width: 100%;
+}
+
+.related-books {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.related-books img {
+  width: 25%;
+  background-color: black;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.related-books span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-aside button {
+  margin-top: 10%;
+  background-color: #242424;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 5px 0px black;
+  cursor: pointer;
 }
 
 .book-content {
@@ -71,9 +109,25 @@
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
+.title-and-immage {
+  display: flex;
+}
+
+.title-and-immage img {
+  height: 15%;
+  max-width: 10%;
+  margin-left: auto;
+}
+
 .add-button-span {
   height: auto;
   display: flex;
   color: red;
   gap: 20px;
+}
+
+.book-error {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

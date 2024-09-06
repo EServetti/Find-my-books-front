@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 function useBook(isbn) {
     const [loading, setLoading] = useState(true)
     const [book, setBook] = useState(null)
+    const [related, setRelated] = useState(null)
     const [error, setError] = useState(null)
 
   useEffect(() => {
@@ -18,6 +19,8 @@ function useBook(isbn) {
           if (response.statusCode === 200) { 
             setBook(response.message)            
             setLoading(false)
+            setRelated(response.relatedBooks)
+            setError(null)
           } else {
             setError(response.message)
           }
@@ -26,7 +29,7 @@ function useBook(isbn) {
     fetchBook();
   }, [isbn]);
 
-  return {book, loading, error}
+  return {book, loading, error, related}
 }
 
 export default useBook

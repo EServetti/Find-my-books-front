@@ -58,7 +58,7 @@ function Login() {
         <ul>
           <li>To read list: save the books you like to read later</li>
           <li>
-            Manage your books: you can have a list of books and mark if you red
+            Manage your books: you can have a list of books and mark if you read
             them
           </li>
           <li>

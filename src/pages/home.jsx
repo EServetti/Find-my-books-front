@@ -27,14 +27,15 @@ function Home() {
   return (
     <div className="main-home">
       <aside className="home-aside">
-        <h3>The website</h3>
+        <h2>Web info:</h2>
         <span className="web-list">
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
         </span>
         {user && <>
-          <h3>Account info</h3>
+          <h2>Account info</h2>
           <section className="loged-web-list">
+            <span>{user.name}</span>
             <span>Books in list: {user.booksQuantity}</span>
             <span>Books read: {user.readBooks}</span>
           </section>

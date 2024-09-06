@@ -18,6 +18,19 @@ nav {
   color: black;
 }
 
+.nav-no-loged {
+  min-height: 15vh;
+  width: 100%;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  background-color: #fafafa;
+  color: black;
+  margin-right: 5%;
+}
+
 a {
   color: black;
   text-decoration: none;
