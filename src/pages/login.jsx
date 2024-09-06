@@ -3,7 +3,7 @@ import "../styles/login.css";
 import viewImg from "../assets/view.png";
 import hideImg from "../assets/hide.png";
 import googleImg from "../assets/google.png"
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../context/UserContext";
 import login from "../services/login.service";
 import google from "../services/google.service";
@@ -13,9 +13,12 @@ function Login() {
 
   //Redirección en caso de que el user ya este logeado
   const { user, setChange, change } = useContext(UserContext);
-  if (user) {
-    navigate("/");
-  }
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user])
+
 
   //Mostrar u ocultar password
   const [password, setPassword] = useState(true);

@@ -3,7 +3,7 @@ import viewImg from "../assets/view.png";
 import hideImg from "../assets/hide.png";
 import googleImg from "../assets/google.png";
 import { UserContext } from "../context/UserContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import google from "../services/google.service";
 import { useNavigate } from "react-router-dom";
 import register from "../services/register.service";
@@ -12,10 +12,13 @@ function Register() {
   const navigate = useNavigate()
   //Redirección en caso de que el user ya este logeado
   const { user } = useContext(UserContext);
-  if (user) {
-    navigate("/");
-  }
-
+  
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }  
+  }, [user])
+  
   //Manejo de valores de inputs
   const [formData, setFormData] = useState({
     email: "",

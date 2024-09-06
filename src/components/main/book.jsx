@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 function Book ({title, authors, publishedDate, publisher, coverImage, isbn}) {
-    const bookImage = coverImage !== 'No cover image available' ? coverImage : "./src/assets/book.png"
+    const bookImage = coverImage !== 'No cover image available' ? coverImage : "/img/book.png"
     const linkURL = `/book/${isbn}`
     return (
         <div className="book">

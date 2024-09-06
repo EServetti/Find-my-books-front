@@ -10,19 +10,14 @@ function BookPage() {
   const { isbn } = useParams();
   const { book, loading, error, related } = useBook(isbn);
   const { user, change, setChange } = useContext(UserContext);
-  const bookCover = loading
-    ? null
-    : book.bigCoverImage !== "No image available"
-    ? book.bigCoverImage
-    : "/img/book.png";
+  const bookCover = "/img/book.png";
 
-    const coverMini = loading
+  const coverMini = loading
     ? null
     : book.coverImage !== "No image available"
     ? book.coverImage
     : "/img/book.png";
-  
- 
+
   //Manejo de agregacion a lista
   const [addError, setAddError] = useState(null);
   function handleClick() {
@@ -46,7 +41,7 @@ function BookPage() {
         <h2>Related books</h2>
         {loading ? (
           <></>
-        ) : related ? (
+        ) : related && related.length > 0 ? (
           <section className="related-books">
             <span>
               <img
@@ -62,7 +57,7 @@ function BookPage() {
               </Link>
             </span>
             <span>
-            <img
+              <img
                 src={
                   related[1].coverImage !== "No cover image available"
                     ? related[1].coverImage
@@ -75,7 +70,7 @@ function BookPage() {
               </Link>
             </span>
             <span>
-            <img
+              <img
                 src={
                   related[2].coverImage !== "No cover image available"
                     ? related[2].coverImage
@@ -105,8 +100,8 @@ function BookPage() {
             </section>
             <section className="book-info">
               <span className="title-and-immage">
-              <h1>{book.title}</h1>
-              <img src={coverMini} alt="cover-mini" />
+                <h1>{book.title}</h1>
+                <img src={coverMini} alt="cover-mini" />
               </span>
               <h2>{book.authors.join(", ")}</h2>
               <p>
@@ -114,6 +109,11 @@ function BookPage() {
               </p>
               <p>
                 <strong>Published Date:</strong> {book.publishedDate}
+              </p>
+              <p>
+                <a href={book.infoLink}>
+                  <strong>More Info</strong>{" "}
+                </a>
               </p>
               <p>{book.description}</p>
               <span className="add-button-span">
