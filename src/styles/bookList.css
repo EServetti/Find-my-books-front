@@ -63,6 +63,40 @@
   gap: 10px;
 }
 
+.manage-book-in-list {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: auto;
+  gap: 10px;
+}
+
+.manage-book-in-list button {
+  background-color: #242424;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.manage-book-in-list button:hover{
+  box-shadow: 0 0 5px 0 white;
+}
+
 .book-in-list-info a {
   color: white;
+}
+
+.read-span {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.read-span img{
+  height: auto;
+  width: 20%;
 }

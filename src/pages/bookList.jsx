@@ -2,10 +2,12 @@ import { useContext, useEffect } from "react";
 import "../styles/bookList.css";
 import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import update from "../services/updateBook";
+import destroy from "../services/deleteBook";
 
 function BookList() {
   const navigate = useNavigate();
-  const { user } = useContext(UserContext);
+  const { user, change, setChange } = useContext(UserContext);
 
   useEffect(() => {
     if (!user) {
@@ -14,6 +16,15 @@ function BookList() {
   }, [user]);
 
   const books = user ? user.books : null;
+
+  //Manejo de libros 
+  function handleUpdate(id, read) {
+    update(id, read, setChange, change)
+  }
+
+  function handleDelete(id) {
+    destroy(id, setChange, change)
+  }
 
   return (
     <div className="main-book-list">
@@ -26,7 +37,7 @@ function BookList() {
         ) : (
           books.map((book) => {
             return (
-              <div className="book-in-list">
+              <div key={book._id} className="book-in-list">
                 <img
                   src={
                     book.coverImage !== "No image available"
@@ -42,11 +53,12 @@ function BookList() {
                   <a href={book.infoLink}>More info</a>
                 </section>
                 <section className="manage-book-in-list">
-                  <span>
-                    <button>Mark as read</button>
-                    Here must be read
+                  <span className="read-span">
+                    <button onClick={() => handleUpdate(book._id, book.read)}>{book.read? "Read" : "Uread"}</button>
+                    <img src={book.read? "./src/assets/checked.png" : "./src/assets/remove.png"} alt="read" />
                   </span>
-                  <button>Delete of my list</button>
+                  <button>Share with a friend</button>
+                  <button onClick={() => handleDelete(book._id)}>Delete of my list</button>
                 </section>
               </div>
             );
