@@ -20,6 +20,14 @@
   color: black;
 }
 
+.no-books {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
 .book-list {
   min-height: 100vh;
   width: 100%;

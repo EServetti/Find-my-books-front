@@ -32,14 +32,6 @@ function Home() {
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
         </span>
-        {user && <>
-          <h2>Account info</h2>
-          <section className="loged-web-list">
-            <span>{user.name}</span>
-            <span>Books in list: {user.booksQuantity}</span>
-            <span>Books read: {user.readBooks}</span>
-          </section>
-          </>}
       </aside>
       <div className="main-description">
         <h3>Find here the book you want!</h3>

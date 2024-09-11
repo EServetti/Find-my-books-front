@@ -28,12 +28,21 @@ function BookList() {
 
   return (
     <div className="main-book-list">
-      <aside className="book-list-aside"></aside>
+      <aside className="book-list-aside">
+      </aside>
       <div className="book-list">
         {!books ? (
           <span>Loading...</span>
         ) : books.length === 0 ? (
-          <span>You don't have any book in list</span>
+          <section className="no-books">
+          <span>You don't have any books in your list! Search for one or see if your friends shared one with you.</span>
+          <span>Here you'll be able to:</span>
+          <ul>
+            <li>Save the books you wanna read</li>
+            <li>Mark them as readed</li>
+            <li>Share them with your frends</li>
+          </ul>
+          </section>
         ) : (
           books.map((book) => {
             return (

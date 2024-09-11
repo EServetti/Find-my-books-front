@@ -75,6 +75,10 @@ a:hover {
 
 .dropdown-menu {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   top: 50px; 
   right: 0;
   background-color: #242424;
@@ -88,6 +92,11 @@ a:hover {
 }
 
 .dropdown-menu li {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px 20px;
   cursor: pointer;
   color: white;

@@ -22,11 +22,12 @@ function LogedUser() {
       <span className="navBar-title">Find your books</span>
       <Link to="/">Home</Link>
       <Link to="/list">To read</Link>
+      <Link to="/community">Community</Link>
       <span onClick={handleUserData} className="user-data">
         <img src={user.photo} alt="user" />
         {isOpen && (
           <ul className="dropdown-menu">
-            <li>Update profile</li>
+            <li>Account</li>
             <li>
               <button className="logout-button" onClick={handleLogout}>Log out</button>
             </li>

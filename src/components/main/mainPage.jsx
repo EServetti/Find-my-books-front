@@ -5,6 +5,7 @@ import Verify from "../../pages/verify";
 import Home from "../../pages/home";
 import BookPage from "../../pages/bookPage";
 import BookList from "../../pages/bookList";
+import Community from "../../pages/community";
 
 function Main() {
   return (
@@ -15,6 +16,7 @@ function Main() {
       <Route path="/verify/:email/:verifyCode" Component={Verify}/>
       <Route path="/book/:isbn" Component={BookPage}/>
       <Route path="/list" Component={BookList}/>
+      <Route path="/community" Component={Community}/>
     </Routes>
   );
 }
