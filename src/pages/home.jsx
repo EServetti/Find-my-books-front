@@ -56,6 +56,11 @@ function Home() {
           </button>
         </section>
         <section className="books-section">
+          {!books && <section>Some advices:
+            <ul>
+              <li>Books may be delayed a little, please be patient.</li>
+              <li>Try to give an understandable description.</li>
+              <li>If the book you are looking for does not appear, try another description.</li></ul></section>}
           {books?.length > 0 && (
             <div className="books-grid">
               {books.map((book, index) => (
