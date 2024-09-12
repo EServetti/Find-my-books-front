@@ -3,6 +3,7 @@ import axios from "axios";
 
 async function lookFriend(email, setError, setFoundUser) {
     if(!email) {
+        setFoundUser(null)
         setError("Please enter the email")
     } else {
         axios.get(`${path}/api/users?email=${email}`, {withCredentials: true}).then((res) => {
@@ -11,6 +12,7 @@ async function lookFriend(email, setError, setFoundUser) {
                 setFoundUser(response.message)
                 setError(null)
             } else {
+                setFoundUser(null)
                 setError(response.message)
             }
         })

@@ -83,6 +83,69 @@
 }
 
 .error {
-    margin-top: 10%;
+    margin-top: 5%;
     color: red;
+}
+
+.users-list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 5%;
+}
+
+.found-user {
+    box-sizing: border-box;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 95%;
+    display: flex;
+    padding: 10px;
+    gap: 5%;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.found-user-img {
+    box-sizing: border-box;
+    min-width: 50px;
+    width: 10%;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5%;
+}
+
+.found-user-info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.add-span {
+    height: auto;
+    min-width: fit-content;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    padding: 5px;
+    gap: 5%;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-span img {
+    width: 15%;
 }
