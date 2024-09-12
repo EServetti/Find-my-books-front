@@ -37,6 +37,7 @@ function Community() {
       <section className="friends">
         <span className="frieds-switch">
           <button
+            style={{background: friends? "white" : "#242424", color: friends? "black" : "white"}}
             onClick={() => {
               setFriends(true);
             }}
@@ -44,6 +45,7 @@ function Community() {
             Your friends
           </button>
           <button
+            style={{background: friends? "#242424" : "white", color: friends? "white" : "black",}}
             onClick={() => {
               setFriends(false);
             }}
@@ -52,7 +54,17 @@ function Community() {
           </button>
         </span>
         {friends ? (
-          <section>You are in frieds section</section>
+          <section className="friends-list">
+            {/* {friends.map((friend) => (
+              <div className="friend">
+                <img className="friend-img" src={friend.photo} alt="user photo" />
+                    <section className="friend-info">
+                      <span>{friend.name}</span>
+                      <span>{friend.email}</span>
+                    </section>
+              </div> 
+             ))} */}
+          </section>
         ) : (
           <section className="add-a-friend">
             <span className="look-a-friend">
@@ -68,6 +80,12 @@ function Community() {
             </span>
             {error && <span className="error">{error}</span>}
             <section className="users-list">
+              {!foundUser && <><h3>To add your friend:</h3>
+              <ul>
+                <li>Enter correctly the email</li>
+                <li>Send the solicitude</li>
+                <li>Wait him to accept</li>
+                </ul></>}
               {foundUser &&
                 foundUser.map((user, index) => (
                   <div className="found-user" key={index}>
