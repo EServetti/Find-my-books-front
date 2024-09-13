@@ -4,11 +4,13 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .friends {
     height: 100vh;
-    width: 40%;
+    min-width: 30%;
+    max-width: 40%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -158,10 +160,94 @@
 
 /* Seccion de amigos*/
 .friends-list {
+    box-sizing: border-box;
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    padding: 5%;
+    gap: 10px;
+}
+
+.friend {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    gap: 5px;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.friends-email {
+    font-size: 0.8rem;
+}
+
+.friend:hover {
+    box-shadow: 0 0 5px 0 white;
+}
+
+.friend-info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 5px;
+    gap: 5px;
+}
+
+.friend-img {
+    min-width: 50px;
+    width: 10%;
+    background-color: white;
+    padding: 5px;
+}
+
+/* Seccion info amigos */
+.main-friend-info {
+    height: 100%;
+    min-width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.no-friend-info {
+    margin-top: 10%;
+}
+
+
+.friends-data {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5%;
+    padding: 10px;
+    margin-left: 5%;
+}
+
+.friends-data img {
+    min-width: 60px;
+    width: 5%;
+    background-color: white;
+    padding: 5px;
+}
+
+.friends-data span {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.friends-data p {
+    margin: 0;
 }

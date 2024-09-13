@@ -7,10 +7,10 @@ import destroy from "../services/deleteBook";
 
 function BookList() {
   const navigate = useNavigate();
-  const { user, change, setChange } = useContext(UserContext);
+  const { user, change, setChange, loading } = useContext(UserContext);
 
   useEffect(() => {
-    if (!user) {
+    if (!loading && !user) {
       navigate("/");
     }
   }, [user]);
