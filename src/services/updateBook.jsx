@@ -9,7 +9,7 @@ async function update(id, read, setChange, change) {
         if (response.statusCode === 200) {
             setChange(!change)
         } else {
-            location.reload()
+        location.replace("/")
         }
     })
 }
