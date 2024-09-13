@@ -1,4 +1,7 @@
+import ChatandInfo from "./chatandInfo";
+
 function FriendInfo({ friendInfo }) {
+  
   return (
     <div className="main-friend-info">
       {!friendInfo && (
@@ -12,17 +15,7 @@ function FriendInfo({ friendInfo }) {
         </section>
       )}
       {friendInfo && (
-        <>
-          <section className="friends-data">
-            <img src={friendInfo.photo} alt="user photo" />
-            <span>
-              <p>{friendInfo.name}</p>
-              <p>Books in list: {friendInfo.booksQuant}</p>
-              <p>Read Books: {friendInfo.readBooks}</p>
-            </span>
-          </section>
-          <section className="chat"></section>
-        </>
+        <ChatandInfo friendInfo={friendInfo}/>
       )}
     </div>
   );

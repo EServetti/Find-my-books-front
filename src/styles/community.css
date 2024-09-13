@@ -9,7 +9,7 @@
 
 .friends {
     height: 100vh;
-    min-width: 30%;
+    min-width: 35%;
     max-width: 40%;
     display: flex;
     justify-content: flex-start;
@@ -210,7 +210,7 @@
 /* Seccion info amigos */
 .main-friend-info {
     height: 100%;
-    min-width: 60%;
+    min-width: 55%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -250,4 +250,35 @@
 
 .friends-data p {
     margin: 0;
+}
+
+.chat {
+    box-sizing: border-box;
+    min-height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    color: black;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: inset 5px 5px 5px -5px black, inset -5px 5px 5px -5px black,
+    inset 5px -5px 5px -5px black, inset -5px -5px 5px -5px black;
+}
+
+.no-shared {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.no-shared h4 {
+    padding: 5%;
+    color: gray;
 }
