@@ -18,7 +18,7 @@ function useFriends() {
             setFriends([]);
             setLoading(false)
         } else {
-            location.reload()
+            location.replace("/")
         }
       });
   }, []);

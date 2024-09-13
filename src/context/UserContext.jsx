@@ -9,7 +9,7 @@ export const UserProvider = ({ children }) => {
   const [loading, setLoading ] = useState(true)
 
   return (
-    <UserContext.Provider value={{ user, setUser, setChange, change, loading}}>
+    <UserContext.Provider value={{ user, setUser, setChange, change, loading, setLoading}}>
       {children}
     </UserContext.Provider>
   );
