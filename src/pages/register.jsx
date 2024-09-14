@@ -44,10 +44,11 @@ function Register() {
 
   //Manejo de Registro
   const [logError, setLogError] = useState(null);
+  const [loading, setLoading ] = useState(false)
 
   function handleRegister(e) {
     e.preventDefault();
-    register(formData, setLogError, navigate);
+    register(formData, setLogError, navigate, setLoading);
   }
 
   //Manejo de login con Google
@@ -101,6 +102,7 @@ function Register() {
             id="password2"
             placeholder="Repeat your password"
           />
+          {loading && <span>Loading...</span>}
           {logError ? <span className="login-error">{logError}</span> : <></>}
           <button onClick={handleRegister}>Register</button>
         </form>

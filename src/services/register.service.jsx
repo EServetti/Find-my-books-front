@@ -2,13 +2,14 @@ import axios from "axios";
 import { path } from "../path";
 import Swal from "sweetalert2";
 
-async function register(data, setLogError, navigate) {
+async function register(data, setLogError, navigate, setLoading) {
   const { email, name, password, password2 } = data;
   if (!email || !name || !password || !password2) {
     setLogError("Please fill out the form");
   } else if (password !== password2) {
     setLogError("Passwords must match");
   } else {
+    setLoading(true)
     axios
       .post(
         `${path}/api/sessions/register`,
@@ -24,6 +25,7 @@ async function register(data, setLogError, navigate) {
       .then((res) => {
         const response = res.data;
         if (response.statusCode === 200) {
+          setLoading(false)
           Swal.fire({
             title: "You're welcome",
             text: "We've sent you a verification mail",

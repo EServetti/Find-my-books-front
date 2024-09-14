@@ -12,3 +12,7 @@
     align-items: center;
     flex-direction: column;
 }
+
+.main-verify a {
+    color: white;
+}
