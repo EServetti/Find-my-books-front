@@ -10,7 +10,8 @@ function useShared(_id) {
       .get(`${path}/api/books/shared/${_id}`, { withCredentials: true })
       .then((res) => {
         const response = res.data;
-        if(response.statusCode === 200) {
+        console.log(response);
+        if(response.statusCode === 200) {          
             setShared(response.message)
             setLoading(false)
         } else {
