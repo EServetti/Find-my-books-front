@@ -21,7 +21,7 @@ function BookPage() {
   //Manejo de agregacion a lista
   const [addError, setAddError] = useState(null);
   function handleClick() {
-    addToList(book, setAddError, user, setChange, change);
+    addToList(book, setAddError, setChange, change);
   }
 
   function title(title) {

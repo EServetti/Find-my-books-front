@@ -267,6 +267,7 @@
     padding: 10px;
     box-shadow: inset 5px 5px 5px -5px black, inset -5px 5px 5px -5px black,
     inset 5px -5px 5px -5px black, inset -5px -5px 5px -5px black;
+    gap: 10px;
 }
 
 .no-shared {
@@ -281,4 +282,85 @@
 .no-shared h4 {
     padding: 5%;
     color: gray;
+}
+
+.shared-book-own {
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #242424;
+    padding: 5%;
+    gap: 5%;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 black;
+}
+
+.shared-book-friend {
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #242424;
+    padding: 5%;
+    gap: 5%;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 black;
+}
+
+.shared-book-own img {
+    min-width: 60px;
+    width: 10%;
+}
+
+.shared-book-friend img {
+    min-width: 60px;
+    width: 10%;
+}
+
+.shared-info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.shared-info p {
+    margin: 0;
+}
+
+.shared-info a {
+    padding: 0;
+    color: white;
+}
+
+.shared-book-own .add-and-error {
+    margin-left: auto;
+}
+
+.shared-book-friend .add-and-error {
+    margin-right: auto;
+}
+
+.add-and-error {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-and-error button {
+    background-color: #242424;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
 }

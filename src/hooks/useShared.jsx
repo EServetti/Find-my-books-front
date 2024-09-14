@@ -8,9 +8,8 @@ function useShared(_id) {
   useEffect(() => {
     axios
       .get(`${path}/api/books/shared/${_id}`, { withCredentials: true })
-      .then((res) => {
+      .then((res) => {        
         const response = res.data;
-        console.log(response);
         if(response.statusCode === 200) {          
             setShared(response.message)
             setLoading(false)
