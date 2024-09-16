@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { UserContext } from "../context/UserContext";
 import addToList from "../services/addToList";
 import { Link } from "react-router-dom";
+import ShareFriends from "../components/main/shareFriends";
 
 function BookPage() {
   const { isbn } = useParams();
@@ -33,6 +34,12 @@ function BookPage() {
       newTitle = newTitle + "...";
       return newTitle;
     }
+  }
+
+  //Compartir con un amigo
+  const [sharing, setSharing ] = useState(false)
+  function handleShare() {
+    setSharing(true)
   }
 
   return (
@@ -86,9 +93,10 @@ function BookPage() {
         ) : (
           <></>
         )}
-        <button>Share with a friend</button>
+        <button onClick={() => handleShare()}>Share with a friend</button>
       </aside>
       <div className="book-content">
+        {sharing && <ShareFriends book={book} setSharing={setSharing} sharing={sharing}/>}
         {error ? (
           <h3 className="book-error">{error}</h3>
         ) : loading && !error ? (

@@ -1,9 +1,10 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import "../styles/bookList.css";
 import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import update from "../services/updateBook";
 import destroy from "../services/deleteBook";
+import ShareFriends from "../components/main/shareFriends";
 
 function BookList() {
   const navigate = useNavigate();
@@ -24,6 +25,14 @@ function BookList() {
 
   function handleDelete(id) {
     destroy(id, setChange, change)
+  }
+
+  //Compartir con amigos
+  const [sharing, setSharing ] = useState(false)
+  const [book, setBook ] = useState(null)
+  function handleShare(book) {
+    setBook(book)
+    setSharing(!sharing)
   }
 
   return (
@@ -66,13 +75,14 @@ function BookList() {
                     <button onClick={() => handleUpdate(book._id, book.read)}>{book.read? "Read" : "Uread"}</button>
                     <img src={book.read? "./src/assets/checked.png" : "./src/assets/remove.png"} alt="read" />
                   </span>
-                  <button>Share with a friend</button>
+                  <button onClick={() => handleShare(book)}>Share with a friend</button>
                   <button onClick={() => handleDelete(book._id)}>Delete of my list</button>
                 </section>
               </div>
             );
           })
         )}
+        {sharing && <ShareFriends setSharing={setSharing} sharing={sharing} book={book}/>}
       </div>
     </div>
   );

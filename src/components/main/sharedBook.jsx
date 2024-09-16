@@ -17,7 +17,7 @@ function SharedBook({
   title,
 }) {
   const bookImage =
-    coverImage !== "No cover image available" ? coverImage : "/img/book.png";
+    coverImage !== "No cover image available" && coverImage !== "No image available" ? coverImage : "/img/book.png";
   const own = user_id === sharedBy;
   const sharedDate = new Date(createdAt).toLocaleString();
   //Manejo de agregacion de libro
@@ -46,10 +46,6 @@ function SharedBook({
             <a href={infoLink}>More Info</a>
             You shared with {friendName} on {sharedDate}
           </section>
-          <span className="add-and-error">
-            <button onClick={handleClick}>Add to list</button>
-            {error && <span className="error">{error}</span>}
-          </span>
         </div>
       ) : (
         <div className="shared-book-friend">
