@@ -20,8 +20,6 @@ async function addToList(book, setError, setChange, change) {
     )
     .then((res) => {
       const response = res.data;
-      console.log(response);
-
       if (response.statusCode === 200) {
         Swal.fire({
           title: "The book was added!",
