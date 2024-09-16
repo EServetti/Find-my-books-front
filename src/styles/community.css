@@ -15,7 +15,6 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    border-right: 2px solid white;
 }
 
 .frieds-switch {
@@ -216,9 +215,11 @@
     align-items: center;
     flex-direction: column;
     padding: 10px;
+    border-left: 2px solid white;
 }
 
 .no-friend-info {
+    height: 100vh;
     margin-top: 10%;
 }
 
