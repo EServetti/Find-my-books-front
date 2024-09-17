@@ -169,6 +169,10 @@
   cursor: pointer;
 }
 
+.close-button button:hover {
+  box-shadow: 0 0 0 0;
+}
+
 .share-button {
   width: 100%;
   display: flex;
