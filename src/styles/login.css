@@ -83,6 +83,7 @@
 }
 
 .password img {
+  min-width: 15px;
   width: 40%;
 }
 

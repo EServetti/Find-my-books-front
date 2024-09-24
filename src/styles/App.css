@@ -70,6 +70,7 @@ a:hover {
 }
 
 .user-data img {
+  min-width: 30px;
   width: 100%;
 }
 
@@ -105,6 +106,14 @@ a:hover {
 .dropdown-menu li:hover {
   background-color: lightgray;
   color: black
+}
+
+.dropdown-menu a {
+  color: white;
+}
+
+.dropdown-menu a:hover {
+  color: black;
 }
 
 .logout-button {

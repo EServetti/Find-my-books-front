@@ -6,6 +6,8 @@ import Home from "../../pages/home";
 import BookPage from "../../pages/bookPage";
 import BookList from "../../pages/bookList";
 import Community from "../../pages/community";
+import Account from "../../pages/account";
+import About from "../../pages/about";
 
 function Main() {
   return (
@@ -17,6 +19,8 @@ function Main() {
       <Route path="/book/:isbn" Component={BookPage}/>
       <Route path="/list" Component={BookList}/>
       <Route path="/community" Component={Community}/>
+      <Route path="/account" Component={Account}/>
+      <Route path="/about" Component={About}/>
     </Routes>
   );
 }

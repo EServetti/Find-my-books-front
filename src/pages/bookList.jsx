@@ -14,7 +14,7 @@ function BookList() {
     if (!loading && !user) {
       navigate("/");
     }
-  }, [user]);
+  }, [user, loading]);
 
   const books = user ? user.books : null;
 

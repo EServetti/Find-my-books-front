@@ -1,0 +1,149 @@
+.main-account {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-top: 2px solid white;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.notifications {
+  box-sizing: border-box;
+  min-width: 35%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  border-right: 2px solid white;
+  padding: 5px;
+}
+
+.user-section {
+  min-height: 100vh;
+  min-width: 60%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.user-section .user {
+  box-sizing: border-box;
+  min-height: 500px;
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin-top: 5%;
+  padding: 10px;
+}
+
+.user-info {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.user-info p {
+  margin: 0;
+}
+
+.user-photo {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+.user-info img {
+  box-sizing: border-box;
+  min-height: 60px;
+  min-width: 60px;
+  width: 100%;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px 5px 0 0;
+  box-shadow: inset 5px 5px 5px -5px black, inset -5px 5px 5px -5px black,
+    inset 5px -5px 5px -5px black, inset -5px -5px 5px -5px black;
+}
+
+.user-info label {
+  min-width: 60px;
+  width: 100%;
+  display: flex;
+  place-content: center;
+  background-color: #242424;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.user-info input {
+  display: none;
+}
+
+.user-metrics {
+  width: 100%;
+  padding-left: 15px;
+}
+
+.user-metrics ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.image-crop {
+    box-sizing: border-box;
+    height: auto;
+    min-height: 300px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    background-color: #242424;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    gap: 10px;
+}
+
+.image-crop img {
+    max-height: 100%;
+    max-width: 80%;
+}
+
+.crop-button {
+    background-color: #242424;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.user-image-canvas {
+    display: none;
+    /* width: 150px;
+    height: 150px;
+    margin-top: 10px;
+    border: 2px solid white;
+    object-fit: contain; */
+}

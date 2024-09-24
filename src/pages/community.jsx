@@ -13,7 +13,7 @@ function Community() {
     if (!loading && !user) {
       navigate("/");
     }
-  }, [user]);
+  }, [user, loading]);
 
   //Manejo de pantalla de amigos
   const [friendsPage, setFriendsPage] = useState(true);

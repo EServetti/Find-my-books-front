@@ -14,7 +14,7 @@ function LogedUser() {
 
   //Manejar el logout
   function handleLogout() {
-    logout(setChange, change)
+    logout(setChange, change);
   }
 
   return (
@@ -27,9 +27,13 @@ function LogedUser() {
         <img src={user.photo} alt="user" />
         {isOpen && (
           <ul className="dropdown-menu">
-            <li>Account</li>
             <li>
-              <button className="logout-button" onClick={handleLogout}>Log out</button>
+              <Link to="/account">Account</Link>
+            </li>
+            <li>
+              <button className="logout-button" onClick={handleLogout}>
+                Log out
+              </button>
             </li>
           </ul>
         )}
