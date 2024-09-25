@@ -15,7 +15,7 @@ async function logout(setChange, change) {
       if (response.statusCode === 200) {
         setChange(!change);
       } else {
-        console.log(response);
+        location.replace("/")
       }
     });
 }
