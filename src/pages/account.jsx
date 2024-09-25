@@ -10,6 +10,7 @@ import ReactCrop, {
 import "react-image-crop/dist/ReactCrop.css";
 import setCanvasPreview from "../services/setCanvasPreview";
 import updatePhoto from "../services/updatePhoto";
+import closeImg from "../assets/close.png"
 
 function Account() {
   const { user, loading, setChange, change } = useContext(UserContext);
@@ -25,7 +26,9 @@ function Account() {
   //Manejo de actualizacion de imagen
   const imgRef = useRef(null);
   const previewCanvasRef = useRef(null);
+  const fileInputRef = useRef(null)
   const [imgSrc, setImgSrc] = useState("");
+  const [imgSelected, setImgSelected] = useState(false)
   const [crop, setCrop] = useState();
   const [error, setError] = useState("");
   
@@ -46,6 +49,7 @@ function Account() {
         }
       });
       setImgSrc(imageUrl);
+      setImgSelected(!imgSelected)
     });
     reader.readAsDataURL(file);
   }
@@ -66,9 +70,10 @@ function Account() {
     const centredCrop = centerCrop(crop, width, height);
     setCrop(centredCrop);
   }
-
+  
   return (
-    <div className="main-account">
+    <>
+    <div className={`main-account${imgSelected ? `-blurred`: ``}`}>
       <section className="notifications">
         <h3>Notifications</h3>
       </section>
@@ -86,6 +91,7 @@ function Account() {
                   type="file"
                   accept="image/*"
                   onChange={onSelectFile}
+                  ref={fileInputRef}
                 />
               </span>
               <span className="user-name-and-email">
@@ -105,47 +111,55 @@ function Account() {
             </section>
           </div>
         ): <></>}
-        {imgSrc && (
-          <div className="image-crop">
-            <ReactCrop
-              crop={crop}
-              keepSelection
-              aspect={1}
-              minWidth={150}
-              onChange={(pixelCrop, percentCrop) => setCrop(percentCrop)}
-            >
-              <img
-                ref={imgRef}
-                src={imgSrc}
-                alt="user-image"
-                onLoad={onImageLoad}
-              />
-            </ReactCrop>
-            <button
-              className="crop-button"
-              onClick={() => {
-                setCanvasPreview(
-                  imgRef.current,
-                  previewCanvasRef.current,
-                  convertToPixelCrop(
-                    crop,
-                    imgRef.current.width,
-                    imgRef.current.height
-                  )
-                );
-                const dataUrl = previewCanvasRef.current.toDataURL();
-                updatePhoto(user._id, dataUrl, setChange, change, setImgSrc, setError)
-              }}
-            >
-              Crop and update
-            </button>
-          </div>
-        )}
         {crop && (
           <canvas ref={previewCanvasRef} className="user-image-canvas" />
         )}
       </section>
     </div>
+    {imgSrc && (
+      <div className="image-crop">
+        <button className="close-crop" onClick={() => {
+          setImgSrc("");
+          setImgSelected(!imgSelected);
+          if (fileInputRef.current) {
+            fileInputRef.current.value = "";
+          }
+        }}><img src={closeImg}/></button>
+        <ReactCrop
+          crop={crop}
+          keepSelection
+          aspect={1}
+          minWidth={150}
+          onChange={(pixelCrop, percentCrop) => setCrop(percentCrop)}
+        >
+          <img
+            ref={imgRef}
+            src={imgSrc}
+            alt="user-image"
+            onLoad={onImageLoad}
+          />
+        </ReactCrop>
+        <button
+          className="crop-button"
+          onClick={() => {
+            setCanvasPreview(
+              imgRef.current,
+              previewCanvasRef.current,
+              convertToPixelCrop(
+                crop,
+                imgRef.current.width,
+                imgRef.current.height
+              )
+            );
+            const dataUrl = previewCanvasRef.current.toDataURL();
+            updatePhoto(user._id, dataUrl, setChange, change, setImgSrc, setError, setImgSelected, fileInputRef)
+          }}
+        >
+          Crop and update
+        </button>
+      </div>
+    )}
+    </>
   );
 }
 
