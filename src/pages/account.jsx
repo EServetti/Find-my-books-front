@@ -13,6 +13,8 @@ import updatePhoto from "../services/updatePhoto";
 import closeImg from "../assets/close.png";
 import readNoti from "../assets/notification.png";
 import useNotifications from "../hooks/useNotifications";
+import markAsRead from "../services/markAsRead";
+import answerFriendRequest from "../services/answerRequest";
 
 function Account() {
   const { user, loading, setChange, change } = useContext(UserContext);
@@ -73,23 +75,37 @@ function Account() {
   }
 
   //Manejo de notificaciones
-  const { notifications, loadingNotifications } = useNotifications();
   const [notiChange, setNotiChange] = useState(false);
+  const { notifications, loadingNotifications } = useNotifications(notiChange);
+
+  function handleNoti(_id, req_id, status, sender_id, receiver_id) {
+    markAsRead(_id, setNotiChange, notiChange);
+    if (status) {
+      answerFriendRequest(
+        req_id,
+        status,
+        sender_id,
+        receiver_id,
+        setNotiChange,
+        notiChange
+      );
+    }
+  }
 
   return (
     <>
       <div className={`main-account${imgSelected ? `-blurred` : ``}`}>
         <section className="notifications">
           <h3>Notifications</h3>
-          {loading ? (
+          {loadingNotifications ? (
             <h4>...Loading</h4>
           ) : !notifications ? (
             <>
-            <h4>You have no notifications yet, here you'll see:</h4>
-            <ul>
-              <li>If someone has sent you a friend request</li>
-              <li>If someone has shared a book with you</li>
-            </ul>
+              <h4>You have no notifications yet, here you'll see:</h4>
+              <ul>
+                <li>If someone has sent you a friend request</li>
+                <li>If someone has shared a book with you</li>
+              </ul>
             </>
           ) : (
             notifications.map((n) => {
@@ -104,15 +120,44 @@ function Account() {
                         {n.sender.name} sent you a friend request on{" "}
                         {new Date(n.createdAt).toLocaleString()}
                       </p>
-                      <span className="accept-decline">
-                        <button className="accept">Accept</button>
-                        <button className="decline">Decline</button>
-                      </span>
+                      {n.friendRequest?.status === "accepted" ? (
+                        <p>The request was accepted</p>
+                      ) : n.friendRequest?.status === "rejected" ? (
+                        <p>The request was rejected</p>
+                      ) : (
+                        <span className="accept-decline">
+                          <button
+                            className="accept"
+                            onClick={() =>
+                              handleNoti(
+                                n._id,
+                                n.friendRequest._id,
+                                "accepted",
+                                n.friendRequest.sender,
+                                n.friendRequest.receiver
+                              )
+                            }
+                          >
+                            Accept
+                          </button>
+                          <button
+                            className="decline"
+                            onClick={() =>
+                              handleNoti(n._id, n.friendRequest._id, "rejected")
+                            }
+                          >
+                            Decline
+                          </button>
+                        </span>
+                      )}
                       {n.read ? (
                         <></>
                       ) : (
                         <div className="tooltip-container">
-                          <button className="notification-button">
+                          <button
+                            className="notification-button"
+                            onClick={() => handleNoti(n._id)}
+                          >
                             <img src={readNoti} />
                           </button>
                           <span className="tooltip-text">Mark as read</span>

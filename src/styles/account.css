@@ -195,6 +195,10 @@
   box-shadow: 0 0 10px 0 black;
 }
 
+.notification p {
+  margin: 0;
+}
+
 .notification img {
   width: 10%;
   min-width: 40px;
