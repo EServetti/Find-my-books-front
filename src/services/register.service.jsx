@@ -9,6 +9,7 @@ async function register(data, setLogError, navigate, setLoading) {
   } else if (password !== password2) {
     setLogError("Passwords must match");
   } else {
+    setLogError(null)
     setLoading(true)
     axios
       .post(
@@ -28,7 +29,7 @@ async function register(data, setLogError, navigate, setLoading) {
           setLoading(false)
           Swal.fire({
             title: "You're welcome",
-            text: "We've sent you a verification mail",
+            text: "We've sent you a verification mail, if you can't see it look in the spam section.",
             customClass: {
               popup: "custom-popup",
               title: "custom-title",

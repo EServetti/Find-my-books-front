@@ -89,7 +89,7 @@ function Register() {
               type={password ? "password" : "text"}
               name="password"
               id="password"
-              placeholder="Enter your password"
+              placeholder="Create a password"
             />
             <button onClick={handlePassword}>
               <img src={password ? viewImg : hideImg} alt="view" />
@@ -100,7 +100,7 @@ function Register() {
             type={password ? "password" : "text"}
             name="password2"
             id="password2"
-            placeholder="Repeat your password"
+            placeholder="Repeat the password"
           />
           {loading && <span>Loading...</span>}
           {logError ? <span className="login-error">{logError}</span> : <></>}
