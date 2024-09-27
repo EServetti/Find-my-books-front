@@ -112,7 +112,26 @@ function Account() {
               return (
                 <div className="notification" key={n._id}>
                   {n.type === "sharedBook" ? (
-                    <p>Shared Book</p>
+                    <>
+                      <img src={n.sender.photo} />
+                      <p>
+                        {n.sender.name} shared a book with you on{" "}
+                        {new Date(n.createdAt).toLocaleString()}
+                      </p>
+                      {n.read ? (
+                        <></>
+                      ) : (
+                        <div className="tooltip-container">
+                          <button
+                            className="notification-button"
+                            onClick={() => handleNoti(n._id)}
+                          >
+                            <img src={readNoti} />
+                          </button>
+                          <span className="tooltip-text">Mark as read</span>
+                        </div>
+                      )}
+                    </>
                   ) : (
                     <>
                       <img src={n.sender.photo} />
