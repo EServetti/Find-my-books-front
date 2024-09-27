@@ -79,7 +79,7 @@ function Account() {
   const { notifications, loadingNotifications } = useNotifications(notiChange);
 
   function handleNoti(_id, req_id, status, sender_id, receiver_id) {
-    markAsRead(_id, setNotiChange, notiChange);
+    markAsRead(_id, setNotiChange, notiChange, setChange, change);
     if (status) {
       answerFriendRequest(
         req_id,

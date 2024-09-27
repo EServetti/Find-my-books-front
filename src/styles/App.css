@@ -56,8 +56,10 @@ a:hover {
 .user-data{
   box-sizing: border-box;
   position: relative;
-  height: 55px;
-  width: 55px;
+  min-height: 55px;
+  max-height: 65px;
+  min-width: 55px;
+  max-width: 65px;
   padding: 5px;
   display: flex;
   justify-content: center;
@@ -69,7 +71,25 @@ a:hover {
   box-shadow: 0px 0px 10px 0px black;
 }
 
-.user-data img {
+.user-image-navBar {
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.unread-notification {
+  position: absolute;
+  top: 0; 
+  right: 0; 
+  width: 15px;
+  background-color: black;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.navBar-image {
   min-width: 30px;
   width: 100%;
 }
@@ -114,6 +134,10 @@ a:hover {
 
 .dropdown-menu a:hover {
   color: black;
+}
+
+.dropdown-menu img {
+  width: 16px;
 }
 
 .logout-button {
