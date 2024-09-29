@@ -29,8 +29,7 @@ function Home() {
       <aside className="home-aside">
         <h2>Web info:</h2>
         <span className="web-list">
-          <Link to="/about">About</Link>
-          <Link to="/contact">Contact</Link>
+          <Link to="/about">About & Contact</Link>
         </span>
       </aside>
       <div className="main-description">

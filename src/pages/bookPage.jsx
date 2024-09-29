@@ -9,21 +9,23 @@ import ShareFriends from "../components/main/shareFriends";
 
 function BookPage() {
   const { isbn } = useParams();
-  const { book, loading, error, related } = useBook(isbn);
   const { user, change, setChange } = useContext(UserContext);
   const bookCover = "/img/book.png";
 
-  const coverMini = loading
-    ? null
-    : book.coverImage !== "No image available"
-    ? book.coverImage
-    : "/img/book.png";
 
   //Manejo de agregacion a lista
   const [addError, setAddError] = useState(null);
+  const { book, loading, error, related } = useBook(isbn, setAddError);
   function handleClick() {
     addToList(book, setAddError, setChange, change);
   }
+
+  const coverMini = loading
+  ? null
+  : book.coverImage !== "No image available"
+  ? book.coverImage
+  : "/img/book.png";
+
 
   function title(title) {
     let newTitle = title.split(" ");
@@ -126,7 +128,7 @@ function BookPage() {
               <p>{book.description}</p>
               <span className="add-button-span">
                 <button onClick={handleClick}>Add to my list</button>
-                {!addError ? <></> : <p>{addError}</p>}
+                {addError && <p>{addError}</p>}
               </span>
             </section>
           </>

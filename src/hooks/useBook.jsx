@@ -2,13 +2,14 @@ import axios from "axios";
 import { path } from "../path";
 import { useEffect, useState } from "react";
 
-function useBook(isbn) {
+function useBook(isbn, setAddError) {
     const [loading, setLoading] = useState(true)
     const [book, setBook] = useState(null)
     const [related, setRelated] = useState(null)
     const [error, setError] = useState(null)
 
   useEffect(() => {
+    setAddError("")
     async function fetchBook() {
       axios
         .post(`${path}/api/books/${isbn}`, {

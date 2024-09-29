@@ -33,6 +33,8 @@ async function addToList(book, setError, setChange, change) {
           confirmButtonText: "",
         });
         setChange(!change);
+      } else if(response.message === "Bad auth from poliecies!") {
+        setError("You must login first!")
       } else {
         setError(response.message);
       }
