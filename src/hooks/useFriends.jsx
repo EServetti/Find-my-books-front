@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 function useFriends() {
   const [friends, setFriends] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [errorFriends, setErrorFriends] = useState("");
+
   useEffect(() => {
     axios
       .get(`${path}/api/users/friends`, { withCredentials: true })
@@ -18,11 +20,12 @@ function useFriends() {
             setFriends([]);
             setLoading(false)
         } else {
-            location.replace("/")
+            setErrorFriends("You must login first!")
+            setLoading(false)
         }
       });
   }, []);
-  return { friends, loading };
+  return { friends, loading, errorFriends };
 }
 
 export default useFriends;

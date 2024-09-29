@@ -5,16 +5,15 @@ import { useState } from "react";
 import share from "../../services/shareBook";
 
 function ShareFriends({ setSharing, sharing, book }) {
-
-  const { loading, friends } = useFriends();
+  const { loading, friends, errorFriends } = useFriends();
   //compartir con un amigo
-  const [sharedWith, setSharedWith ] = useState([])
-  const [error, setError ] = useState(null)
-  const [message, setMessage ] = useState(null)
+  const [sharedWith, setSharedWith] = useState([]);
+  const [error, setError] = useState(null);
+  const [message, setMessage] = useState(null);
   function handleClick(_id) {
     setSharedWith((prevSharedWith) => {
       if (prevSharedWith.includes(_id)) {
-        return prevSharedWith.filter(id => id !== _id);
+        return prevSharedWith.filter((id) => id !== _id);
       } else {
         return [...prevSharedWith, _id];
       }
@@ -22,9 +21,8 @@ function ShareFriends({ setSharing, sharing, book }) {
   }
 
   function handleShare() {
-    share(sharedWith, book, setError, setMessage)
+    share(sharedWith, book, setError, setMessage);
   }
-
 
   return (
     <section className="share-friends-list">
@@ -35,9 +33,17 @@ function ShareFriends({ setSharing, sharing, book }) {
       </span>
       {loading ? (
         <p>Loading...</p>
+      ) : errorFriends ? (
+        <span className="error">{errorFriends}</span>
       ) : (
         friends.map((f) => (
-          <div onClick={() => handleClick(f._id)} className={`share-friend ${sharedWith.includes(f._id) ? 'selected' : ''}`} key={f._id}>
+          <div
+            onClick={() => handleClick(f._id)}
+            className={`share-friend ${
+              sharedWith.includes(f._id) ? "selected" : ""
+            }`}
+            key={f._id}
+          >
             <img src={f.photo} alt="user" />
             <span>
               <p>{f.name}</p>
@@ -46,10 +52,10 @@ function ShareFriends({ setSharing, sharing, book }) {
           </div>
         ))
       )}
-      <span style={{color: "red"}}>{error && error}</span>
+      <span style={{ color: "red" }}>{error && error}</span>
       <span>{message && message}</span>
       <span className="share-button">
-        <button onClick={handleShare}>Share</button>
+        {loading ? <></> : errorFriends ? <></> : <button onClick={handleShare}>Share</button>}
       </span>
     </section>
   );

@@ -15,7 +15,7 @@ function FriendsList({setFriendInfo}) {
     <section className="friends-list">
       {loading ? (
         <span>Loading...</span>
-      ) : friends.length === 0 ? (
+      ) : !friends || friends.length === 0 ? (
         <span>You don't have any friends yet, invite them and share your books!</span>
       ) : (
         friends.map((friend, index) => (
