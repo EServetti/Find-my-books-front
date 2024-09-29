@@ -1,0 +1,59 @@
+.main-recover {
+  min-height: 100vh;
+  min-width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main-recover h3 {
+  margin-top: 10%;
+}
+
+.main-recover form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main-recover input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.main-recover button {
+  background-color: #2f1212;
+  color: white;
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.password-recover {
+  width: 100%;
+  display: flex;
+}
+
+.password-recover input {
+  width: 80%;
+  border-radius: 10px 0 0 10px;
+}
+
+.password-recover button {
+  width: 20%;
+  background-color: white;
+  border-radius: 0 10px 10px 0;
+  padding: 0;
+}
+
+.password-recover img {
+  min-width: 15px;
+  width: 40%;
+}

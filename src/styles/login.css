@@ -1,0 +1,114 @@
+.main-login {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.login-benefits {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.login {
+  height: 100%;
+  flex: 2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  border-left: 2px solid white;
+  padding-top: 5%;
+  gap: 10px;
+}
+
+.login a {
+  color: white;
+}
+
+.login form {
+  height: auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login input {
+  box-sizing: border-box;
+  width: 70%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.login button {
+  width: 70%;
+  padding: 5px;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+}
+
+.login button:hover {
+  box-shadow: 0 0 10px 5px black;
+}
+
+.password {
+  width: 70%;
+  display: flex;
+}
+
+.password input {
+  width: 80%;
+  border-radius: 10px 0 0 10px;
+}
+
+.password button {
+  width: 20%;
+  background-color: white;
+  border-radius: 0 10px 10px 0;
+  padding: 0;
+}
+
+.password img {
+  min-width: 15px;
+  width: 40%;
+}
+
+.password button:hover {
+  box-shadow: none;
+}
+
+.login-error {
+  color: red;
+}
+
+.google {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.google button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.google img {
+  width: 20px;
+}
