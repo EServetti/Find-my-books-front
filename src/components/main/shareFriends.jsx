@@ -35,6 +35,8 @@ function ShareFriends({ setSharing, sharing, book }) {
         <p>Loading...</p>
       ) : errorFriends ? (
         <span className="error">{errorFriends}</span>
+      ) : friends.length === 0 ? (
+        <span>You don't have any friend yet</span>
       ) : (
         friends.map((f) => (
           <div
@@ -55,7 +57,13 @@ function ShareFriends({ setSharing, sharing, book }) {
       <span style={{ color: "red" }}>{error && error}</span>
       <span>{message && message}</span>
       <span className="share-button">
-        {loading ? <></> : errorFriends ? <></> : <button onClick={handleShare}>Share</button>}
+        {loading ? (
+          <></>
+        ) : errorFriends ? (
+          <></>
+        ) : (
+          <button onClick={handleShare}>Share</button>
+        )}
       </span>
     </section>
   );
