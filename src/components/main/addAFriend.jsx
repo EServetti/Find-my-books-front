@@ -1,8 +1,8 @@
 import lookFriend from "../../services/lookFriend"
 import addFriend from "../../services/addFriend"
 import { useState } from "react";
-import glass from "./src/assets/glass.png"
-import addUser from "./src/assets/add-user.png"
+import glass from "../../assets/glass.png"
+import addUser from "../../assets/add-user.png"
 
 function AddAFriend() {
   //Manejo de busqueda de amigos
