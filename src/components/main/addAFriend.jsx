@@ -1,6 +1,8 @@
 import lookFriend from "../../services/lookFriend"
 import addFriend from "../../services/addFriend"
 import { useState } from "react";
+import glass from "./src/assets/glass.png"
+import addUser from "./src/assets/add-user.png"
 
 function AddAFriend() {
   //Manejo de busqueda de amigos
@@ -27,7 +29,7 @@ function AddAFriend() {
           onChange={handleChange}
         />
         <button onClick={handleClick}>
-          <img src="./src/assets/glass.png" alt="glass" />
+          <img src={glass} alt="glass" />
         </button>
       </span>
       {error && <span className="error">{error}</span>}
@@ -59,7 +61,7 @@ function AddAFriend() {
                 onClick={() => handleAddFriend(user._id)}
               >
                 Send request{" "}
-                <img src="./src/assets/add-user.png" alt="add user" />
+                <img src={addUser} alt="add user" />
               </button>
             </div>
           ))}

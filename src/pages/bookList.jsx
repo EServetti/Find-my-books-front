@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import update from "../services/updateBook";
 import destroy from "../services/deleteBook";
 import ShareFriends from "../components/main/shareFriends";
+import unread from "./src/assets/remove.png"
+import read from "./src/assets/checked.png"
 
 function BookList() {
   const navigate = useNavigate();
@@ -73,7 +75,7 @@ function BookList() {
                 <section className="manage-book-in-list">
                   <span className="read-span">
                     <button onClick={() => handleUpdate(book._id, book.read)}>{book.read? "Read" : "Uread"}</button>
-                    <img src={book.read? "./src/assets/checked.png" : "./src/assets/remove.png"} alt="read" />
+                    <img src={book.read? read : unread} alt="read" />
                   </span>
                   <button onClick={() => handleShare(book)}>Share with a friend</button>
                   <button onClick={() => handleDelete(book._id)}>Delete of my list</button>
