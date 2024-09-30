@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import update from "../services/updateBook";
 import destroy from "../services/deleteBook";
 import ShareFriends from "../components/main/shareFriends";
-import unread from "./src/assets/remove.png"
-import read from "./src/assets/checked.png"
+import unread from "../assets/remove.png"
+import read from "../assets/checked.png"
 
 function BookList() {
   const navigate = useNavigate();
