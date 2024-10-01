@@ -42,6 +42,7 @@ async function register(data, setLogError, navigate, setLoading) {
           })
         } else {
           setLogError(response.message);
+          setLoading(false)
         }
       });
   }
