@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import "../../styles/home.css"
 
 function Book ({title, authors, publishedDate, publisher, coverImage, isbn}) {
     const bookImage = coverImage !== 'No cover image available' ? coverImage : "/img/book.png"

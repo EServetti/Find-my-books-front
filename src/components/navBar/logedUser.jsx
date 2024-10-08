@@ -22,6 +22,7 @@ function LogedUser() {
     <nav>
       <span className="navBar-title">Find your books</span>
       <Link to="/">Home</Link>
+      <Link to="/recommended">For me</Link>
       <Link to="/list">To read</Link>
       <Link to="/community">Community</Link>
       <span onClick={handleUserData} className="user-data">
