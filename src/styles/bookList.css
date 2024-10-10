@@ -72,6 +72,7 @@
 }
 
 .manage-book-in-list {
+  min-width: 150px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -192,4 +193,45 @@
 
 .share-button button:hover {
   box-shadow: 0 0 5px 0 white;
+}
+
+.read-pages {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.read-pages input {
+  height: 15px;
+  width: 15px;
+  background-color: #242424;
+  border: 0;
+  text-align: center;
+  color: white;
+}
+
+.read-pages input::placeholder {
+  color: white;
+}
+
+/* Quitar botones por default  */
+/* Para navegadores WebKit (Chrome, Safari, Opera) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.read-pages button {
+  display: flex;
+  align-items: center;
+  border: none;
+}
+
+.read-pages img {
+  width: 15px;
+}
+
+.read-pages button:hover {
+  box-shadow: none;
 }
