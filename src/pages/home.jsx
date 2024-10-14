@@ -3,10 +3,10 @@ import "../styles/home.css";
 import find from "../services/findBook";
 import Book from "../components/main/book";
 import { Link } from "react-router-dom";
-import {UserContext} from "../context/UserContext"
+import { UserContext } from "../context/UserContext";
 
 function Home() {
-  const {user} = useContext(UserContext)
+  const { user } = useContext(UserContext);
 
   //Manejo del input
   const [inpValue, setInpValue] = useState("");
@@ -22,6 +22,11 @@ function Home() {
 
   function handleClick() {
     find(inpValue, setLogError, setBooks);
+  }
+
+  //Limpiar seccion de descripcion
+  function handleClean() {
+    setInpValue("");
   }
 
   return (
@@ -42,16 +47,33 @@ function Home() {
             placeholder="Enter a description of a book you'd like to read or a part of one you know."
           ></textarea>
           {logError ? <p className="home-error">{logError}</p> : <></>}
-          <button onClick={handleClick} className="look-button">
-            Look
-          </button>
+          <span className="clean-and-look">
+            <button onClick={handleClean} className="clean-button">
+              Clean
+            </button>
+            <button onClick={handleClick} className="look-button">
+              Look
+            </button>
+          </span>
         </section>
         <section className="books-section">
-          {!books && <section>Some advices:
-            <ul>
-              <li>Books may be delayed a little, please be patient.</li>
-              <li>Try to give an understandable description.</li>
-              <li>If the book you are looking for does not appear, try another description.</li></ul></section>}
+          {!books && (
+            <section>
+              Some advices:
+              <ul>
+                <li>Books may be delayed a little, please be patient.</li>
+                <li>Try to give an understandable description.</li>
+                <li>
+                  If the book you are looking for does not appear, try another
+                  description.
+                </li>
+              </ul>
+              Don't you know what to write? Try with:
+              <blockquote>
+              "I want to read an adventure book with science fiction and mystery. I would also like it if there was a plot twist."
+              </blockquote>
+            </section>
+          )}
           {books?.length > 0 && (
             <div className="books-grid">
               {books.map((book, index) => (

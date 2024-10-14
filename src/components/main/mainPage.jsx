@@ -10,6 +10,7 @@ import Account from "../../pages/account";
 import About from "../../pages/about";
 import Recover from "../../pages/recover";
 import Password from "../../pages/password";
+import Recommended from "../../pages/recommended";
 
 function Main() {
   return (
@@ -25,6 +26,7 @@ function Main() {
       <Route path="/about" Component={About}/>
       <Route path="/recover" Component={Recover}/>
       <Route path="/password/:token" Component={Password}/>
+      <Route path="/recommended" Component={Recommended}/>
     </Routes>
   );
 }
