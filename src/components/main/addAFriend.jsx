@@ -39,8 +39,8 @@ function AddAFriend() {
             <h3>To add your friend:</h3>
             <ul>
               <li>Enter correctly the email</li>
-              <li>Send the solicitude</li>
-              <li>Wait him to accept</li>
+              <li>Send the invite</li>
+              <li>Wait them to accept</li>
             </ul>
           </>
         )}
