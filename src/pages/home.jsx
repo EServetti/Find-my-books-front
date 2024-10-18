@@ -59,9 +59,9 @@ function Home() {
         <section className="books-section">
           {!books && (
             <section>
-              Some advices:
+              Some advice:
               <ul>
-                <li>Books may be delayed a little, please be patient.</li>
+                <li>It may take a while to return the books, please be patient.</li>
                 <li>Try to give an understandable description.</li>
                 <li>
                   If the book you are looking for does not appear, try another
