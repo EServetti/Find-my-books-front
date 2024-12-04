@@ -25,7 +25,7 @@ function About() {
 
             <p>You can contact me through the following media:</p>
             <ul>
-                <li><a href="https://eservetti.github.io/My-portfolio/">My portfolio</a></li>
+                <li><a href="https://emilio-servetti.vercel.app/">My portfolio</a></li>
                 <li><a href="https://github.com/EServetti">Git Hub</a></li>
                 <li><a href="https://www.linkedin.com/in/emilio-servetti-3981592ba/">My Linkedin</a></li>
                 <li>Or email me at servettiemilio1@gmail.com</li>
